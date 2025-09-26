@@ -1,21 +1,17 @@
 import Button from "../common/Button";
+import Link from "next/link";
+import { HeaderProps } from "@/interfaces";
 
-export default function Header() {
+export default function Header({ action }: HeaderProps) {
   return (
-    <header className="bg-white px-10 py-4 shadow-lg flex gap-30 align-middle">
+    <header className="bg-white px-10 py-4 flex gap-30 align-middle">
       <div className="logo">
-        <h1 className="text-black font-extrabold text-3xl">Church Media</h1>
-      </div>
-      <div className=" flex align-middle max-h-min outline-1 outline-amber-300">
-        <ul className="flex gap-4 align-middle max-h-min">
-          <li className="text-gray-800 max-h-min">Home</li>
-          <li className="text-gray-800 max-h-min">Media</li>
-          <li className="text-gray-800 max-h-min">Overview</li>
-          <li className="text-gray-800 max-h-min">Settings</li>
-        </ul>
+        <h1 className="text-black font-extrabold text-3xl">
+          <Link href="/">Church Media</Link>
+        </h1>
       </div>
       <div className="ml-auto">
-        <Button title="Upload Media" />
+        <Button type="button" title="Get Shortlisted" action={action} />
       </div>
     </header>
   );
